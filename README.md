@@ -1,5 +1,8 @@
 # sync-views
 
+[![Build Status](https://travis-ci.org/liamqma/sync-views.svg?branch=master)](https://travis-ci.org/liamqma/sync-views)
+[![Coverage Status](https://coveralls.io/repos/github/liamqma/sync-views/badge.svg?branch=master)](https://coveralls.io/github/liamqma/sync-views?branch=master)
+
 Template rendering consolidation library. This module is a fork of [co-views](https://github.com/tj/co-views).
 You probably should use [co-views](https://github.com/tj/co-views) except you have to render templates synchronously.
 
