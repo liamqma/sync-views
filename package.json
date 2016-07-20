@@ -1,7 +1,7 @@
 {
   "name": "sync-views",
   "description": "Synchronous template rendering for node.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "lib/index.js",
   "scripts": {
     "test": "./node_modules/.bin/nyc ./node_modules/.bin/ava",
