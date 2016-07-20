@@ -36,12 +36,6 @@
       "test/**/*.spec.js"
     ]
   },
-  "nyc": {
-    "reporter": [
-      "lcov",
-      "text"
-    ]
-  },
   "engines": {
     "node": "^4.2.4"
   },
