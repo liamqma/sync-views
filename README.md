@@ -1,8 +1,10 @@
 # sync-views
 
-  Template rendering consolidation library. This module is a fork of [co-views](https://github.com/tj/co-views).
-  You probably should use [co-views](https://github.com/tj/co-views) except you have to render templates synchronously.
-  To use `React`, both `react` and `react-dom` need to be installed. Also react component needs to be transpiled beforehand.
+Template rendering consolidation library. This module is a fork of [co-views](https://github.com/tj/co-views).
+You probably should use [co-views](https://github.com/tj/co-views) except you have to render templates synchronously.
+
+## Notes
+  -  To use `React`, both `react` and `react-dom` need to be installed. Also react component needs to be transpiled beforehand.
 
 ## Supported template engines
   - [react](https://github.com/facebook/react)

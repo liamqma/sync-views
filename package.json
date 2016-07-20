@@ -4,6 +4,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "./node_modules/.bin/nyc ./node_modules/.bin/ava",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "prepublish": "gulp build"
   },
   "license": "ISC",
