@@ -33,3 +33,8 @@ test('path can contain ext', (t) => {
     t.is(render('jade/user.jade', locals), html);
     t.is(render('react/user.js', locals), html);
 });
+
+test('should have default map', (t) => {
+    const render = views(__dirname + '/fixtures/react', { default: 'js' });
+    t.is(render('user', locals), html);
+});

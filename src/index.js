@@ -1,5 +1,5 @@
-import { join, extname } from 'path';
-import cons from './consolidate';
+import { join, extname } from "path";
+import cons from "./consolidate";
 
 const env = process.env.NODE_ENV || 'development';
 
@@ -9,7 +9,7 @@ export default (dir, opts = {}) => {
     const ext = opts.ext || opts.default || 'jade';
 
     // engine map
-    const map = opts.map || {};
+    const map = opts.map || { jade: 'jade', js: 'react' };
 
     // cache compiled templates
     let cache = opts.cache;

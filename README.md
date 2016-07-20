@@ -24,7 +24,7 @@ $ npm install react react-dom jade
 
 ## Options
 
- - `map` an object mapping extension names to engine names [`{}`]
+ - `map` an object mapping extension names to engine names [`{}`]. If not provided, default to [`{ jade: 'jade', js: 'react' }`]
  - `default` default extension name to use when missing [`html`]
  - `cache` cached compiled functions [NODE_ENV != 'development']
 
@@ -80,7 +80,7 @@ console.log(html);
 
   Dependending on your choice of application structure, you may wish to
   share these same settings between all of your application, instead of
-  constantly initializing co-views. To do this simply create a `views.js`
+  constantly initializing sync-views. To do this simply create a `views.js`
   module and export the render function returned:
 
 ```js
