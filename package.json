@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "main": "lib/index.js",
   "scripts": {
-    "test": "./node_modules/.bin/nyc ./node_modules/.bin/ava"
+    "test": "./node_modules/.bin/nyc ./node_modules/.bin/ava",
+    "prepublish": "gulp build"
   },
   "license": "ISC",
   "repository": {
