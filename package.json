@@ -1,5 +1,6 @@
 {
   "name": "sync-views",
+  "description": "Synchronous template rendering for node.js",
   "version": "0.1.0",
   "main": "lib/index.js",
   "scripts": {
