@@ -17,6 +17,11 @@ export default (dir, opts = {}) => {
 
     return (path, locals = {}) => {
 
+        // merge opts.locals
+        if (opts.locals) {
+            locals = Object.assign(locals, opts.locals);
+        }
+
         // default extname
         let e = extname(path);
 

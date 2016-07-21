@@ -38,3 +38,8 @@ test('should have default map', (t) => {
     const render = views(__dirname + '/fixtures/react', { default: 'js' });
     t.is(render('user', locals), html);
 });
+
+test('should merge opts.locals', (t) => {
+    const render = views(__dirname + '/fixtures/jade', { default: 'jade', locals });
+    t.is(render('user', locals), html);
+})
