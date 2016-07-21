@@ -1,9 +1,10 @@
-import test from 'ava';
-import views from '../src/index';
+import test from "ava";
+import views from "../src/index";
 
 const locals = { name: 'John' };
 const html = '<p>John</p>';
 
+// misc
 test('throws error if path not found', (t) => {
     const render = views(__dirname, { default: 'jade' });
     try {
@@ -13,19 +14,9 @@ test('throws error if path not found', (t) => {
     }
 });
 
-test('renders jade template', (t) => {
-    const render = views(__dirname + '/fixtures/jade', { default: 'jade' });
+test('should merge opts.locals', (t) => {
+    const render = views(__dirname + '/fixtures/jade', { default: 'jade', locals });
     t.is(render('user', locals), html);
-});
-
-test('renders react static template', (t) => {
-    const render = views(__dirname + '/fixtures/react', { ext: 'js', map: { js: 'react' } });
-    t.is(render('user', locals), html);
-});
-
-test('renders react non static template', (t) => {
-    const render = views(__dirname + '/fixtures/react', { ext: 'js', map: { js: 'react' } });
-    t.true(render('user', Object.assign(locals, { isNonStatic: true })).includes('data-react-checksum'));
 });
 
 test('path can contain ext', (t) => {
@@ -39,7 +30,32 @@ test('should have default map', (t) => {
     t.is(render('user', locals), html);
 });
 
-test('should merge opts.locals', (t) => {
-    const render = views(__dirname + '/fixtures/jade', { default: 'jade', locals });
+
+// Jade
+test('renders jade template', (t) => {
+    const render = views(__dirname + '/fixtures/jade', { default: 'jade' });
     t.is(render('user', locals), html);
-})
+});
+
+
+// React
+test('renders react static template', (t) => {
+    const render = views(__dirname + '/fixtures/react', { ext: 'js', map: { js: 'react' } });
+    t.is(render('user', locals), html);
+});
+
+test('renders react non static template', (t) => {
+    const render = views(__dirname + '/fixtures/react', { ext: 'js', map: { js: 'react' } });
+    t.true(render('user', Object.assign(locals, { isNonStatic: true })).includes('data-react-checksum'));
+});
+
+// Redux
+test('renders react redux', (t) => {
+    const Redux = require('redux');
+    const store = Redux.createStore(() => locals);
+    const render = views(__dirname + '/fixtures/redux', { ext: 'js', map: { js: 'redux' } });
+    t.true(render('user', { store }).includes(locals.name));
+});
+
+
+

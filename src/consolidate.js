@@ -25,7 +25,21 @@ function react(path, options) {
     return ReactDOMServer.renderToStaticMarkup(React.createElement(component, options));
 }
 
+function redux(path, options) {
+    const store = options.store;
+    delete options.store;
+    if (!store) return react(path, options);
+
+    const React = require('react');
+    const ReactDOMServer = require('react-dom/server');
+    const component = polyfillRequire(path);
+    const ReactRedux = require('react-redux');
+
+    return ReactDOMServer.renderToString(React.createElement(ReactRedux.Provider, { store }, React.createElement(component, options)));
+}
+
 export default {
     jade,
-    react
+    react,
+    redux
 }
